@@ -1,0 +1,82 @@
+
+
+//function to merge 2 sorted LinkedLists
+
+//Node headA is the  head of the LinkeList A
+//Node headB is the head of the LinkedList B
+
+
+Node mergeLists(Node headA, Node headB) {
+    Node n=null;
+    Node a=headA;
+    Node b=headB;
+    Node head=null;
+   
+   
+   //Iterating both the list A and List b simultaneously
+    while(a!=null && b!=null)
+    {
+        //Comparision of data
+        if(a.data<b.data)
+        {
+            if(n==null)
+            {
+                n=a;
+            if(head==null)
+                head=n;
+        }
+        else
+        {
+            n.next=a;
+            n=n.next;
+          }
+        a=a.next;
+        }
+        //if data in list B is greater than A
+        else
+        {
+            if(n==null)
+            {
+                n=b;
+                if(head==null)
+                    head=n;
+                
+            }
+            else
+            {
+                n.next=b;
+                n=n.next;
+            }
+            b=b.next;
+        }
+    }
+    
+    // additional function to get the Node pointer to the head of the merged list.
+    if(a!=null)
+    {
+        if(n==null)
+        {
+            n=a;
+            
+        }
+        else
+        {
+           n.next=a;
+        }
+        if(head==null)
+            head=n;
+    }
+    else if(b!=null)
+    {
+        if(n==null)
+            n=b;
+        else
+            n.next=b;
+        if(head==null)
+            head=n;
+    }
+    
+    
+    
+    return head;
+}
