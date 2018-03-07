@@ -1,0 +1,16 @@
+//Recursive function to print the elements of a Linked List in a reverse manner.
+
+
+
+//The pointer iterates till the last node. 
+// Then prints the data from the last node
+void ReversePrint(Node head) {
+  
+    if(head==null)
+        return;
+    else
+    {
+    Node n=head;
+    ReversePrint(n.next);
+    System.out.println(n.data+" ");
+}
