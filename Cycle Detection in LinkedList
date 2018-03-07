@@ -1,0 +1,16 @@
+boolean hasCycle(Node head) {
+    Node firstpointer=head;
+    Node secondpointer=head;
+    while(firstpointer!=null && secondpointer!=null && secondpointer.next!=null)
+    {
+        firstpointer=firstpointer.next;
+        secondpointer=secondpointer.next.next;
+        if(firstpointer==secondpointer)
+          {
+              return true;
+         }
+         
+      }
+    return false;
+
+}
